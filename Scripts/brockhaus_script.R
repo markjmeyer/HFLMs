@@ -21,10 +21,10 @@ mstop(boostIt)
 modelF <- modelF[mstop(boostIt)]
 
 predF   <- predict(modelF)
-matplot(1:ymax, t(predF), type = 'n', xlab = 't', ylab = '', main = 'Brockhaus et al. (2017)')
+matplot(1:ncol(Yt), t(predF), type = 'n', xlab = 't', ylab = '', main = 'Brockhaus et al. (2017)')
 title(ylab = expression(hat(Y)(t)), line = 2)
 abline(h = axTicks(2), v = axTicks(1), lty = 3, col = 'lightgray')
-matplot(1:ymax, t(predF), type = 'l', add = TRUE, col = rgb(0.25, 0.25, 0.75, alpha = 0.5))
+matplot(1:ncol(Yt), t(predF), type = 'l', add = TRUE, col = rgb(0.25, 0.25, 0.75, alpha = 0.5))
 
 #### Built-in functions ####
 plot(modelF, ask = FALSE, pers = FALSE, which = 2, main = 'Brockhaus et al. (2017)', ylab = 'v',
