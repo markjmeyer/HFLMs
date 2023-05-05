@@ -1,3 +1,6 @@
+#### Scheipl et al. (2015) Sample Script ####
+# Simulated data example for Meyer (2023)
+
 library(refund)
 
 Yt    <- read.table('Y_l.txt')
@@ -7,6 +10,7 @@ Xs    <- as.matrix(Xt)
 xmax  <- ncol(Xs)
 ymax  <- ncol(Ys)
 
+#### fit penalized FFR model ####
 modelR  <- pffr(Ys ~ ff(Xs, limits = "s<t", xind = 1:xmax,
                        splinepars = list(bs = "ps", m = list(c(2, 1), c(2, 1)),
                                          k = c(10, 10))) - 1, yind = 1:ymax)

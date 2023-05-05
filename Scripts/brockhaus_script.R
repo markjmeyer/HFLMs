@@ -1,3 +1,6 @@
+#### Brockhaus et al. (2017) Sample Script ####
+# Simulated data example for Meyer (2023)
+
 library(FDboost)
 
 Yt    <- read.table('Y_l.txt')
