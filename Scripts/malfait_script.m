@@ -8,11 +8,12 @@ addpath('~/Code/fdaM')  % requires Malfait & Ramsay fdaM MATLAB toolbox
 
 %% load data %%
 % cd('./Data')
-Xl  = readmatrix('X_l.txt');
-Yl  = readmatrix('X_l.txt');
+X  = readmatrix('X_l.txt');
+Y  = readmatrix('Y_l.txt');
 
 %%
-T   = size(Xl,2);
+N   = size(X,1);
+T   = size(X,2);
 
 %% MR model set up %%
 ts          = (T-1);
@@ -25,8 +26,8 @@ ymatlag   = zeros(nfine, N);
 xmatlag   = zeros(nfine, N);
 
 for i=1:N
-    ytemp = interp1(timevec,Yl(i,:),tfine);
-    xtemp = interp1(timevec,Xl(i,:),tfine);
+    ytemp = interp1(timevec,Y(i,:),tfine);
+    xtemp = interp1(timevec,X(i,:),tfine);
     ymatlag(:,i) = ytemp;
     xmatlag(:,i) = xtemp;
 end

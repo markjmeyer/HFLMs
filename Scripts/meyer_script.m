@@ -7,10 +7,11 @@
 addpath('~/Code');
 
 %% load data %%
-% cd('./Data')
-Xl  = readmatrix('X_l.txt');
-Yl  = readmatrix('X_l.txt');
-N   = size(Yl,1);
+% cd('~/Data')
+X   = readmatrix('X_l.txt');
+Y   = readmatrix('Y_l.txt');
+N   = size(Y,1);
+T   = size(Y,2);
 
 %% model specs %%
 model.alf           = 0.05; % global alpha
@@ -38,7 +39,7 @@ xlabel('v','FontSize',14);
 ylabel('t','FontSize',14);
 title({'Meyer, Malloy, & Coull (2021)'});
 
-%% simba scores
+%% simba scores 
 figure1 = figure; axes1 = axes('Parent',figure1); hold(axes1,'on');
 surf(postout.sbs','FaceColor','interp','EdgeColor','none'); xlim([1 T]); ylim([1 T]); view(0, 90); colorbar
 colormap(copper)
