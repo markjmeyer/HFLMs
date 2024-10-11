@@ -18,8 +18,8 @@ b1      = 0.65*stnrs*(1/(sqrt(2*pi*b1var)))*exp(-1/(2*b1var)*(t./T-v./T-0.75).^2
 b1      = b1';
 
 %% constrain true surface %%
-% bh1  = zeros(size(b1));
-bh1  = nan(size(b1));
+bh1  = zeros(size(b1));
+% bh1  = nan(size(b1)); % for plotting
 for i = 1:size(b1,1)
     for j = i:size(b1,2)
         bh1(i,j) = b1(i,j);
